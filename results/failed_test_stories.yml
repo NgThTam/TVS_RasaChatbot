@@ -1,0 +1,57 @@
+version: "3.1"
+stories:
+- story: kich ban demo (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_name: huỳnh
+  - slot_was_set:
+    - cust_name: huỳnh
+  - action: action_say_with_name
+  - intent: tu_van_sach
+  - action: action_categories
+  - intent: sach_lich_su
+  - action: action_book_history
+  - intent: sach_tieusu_tutruyen  # predicted: nlu_fallback: giới thiệu sách tiểu sử cho tôi đi
+  - action: action_book_BiographyAutobiography
+  - intent: gia_thue_sach
+  - action: utter_gia_thue_sach
+  - intent: gia_han
+  - action: utter_gia_han
+  - intent: lay_ten_tinh
+    entities:
+    - ten_tinh: an giang
+  - slot_was_set:
+    - ten_tinh: an giang
+  - action: action_cost_ship  # predicted: action_unlikely_intent
+  - intent: phi_van_chuyen  # predicted: lay_ten_tinh: phí vận chuyển đến các tỉnh là bao nhiêu
+  - action: utter_phi_van_chuyen
+  - intent: nlu_fallback  # predicted: lay_ten_tinh: giao pizza đến nhà cho tôi đi
+  - action: utter_please_rephrase
+  - intent: cac_buoc_muon_sach
+  - action: action_start_muonsach
+  - intent: gui_phan_hoi
+  - action: utter_gui_phan_hoi
+  - intent: dia_chi
+  - action: utter_dia_chi
+  - intent: give_name  # predicted: nlu_fallback: xin chào, tôi là [tâm](cust_name)
+    entities:
+    - cust_name: tâm
+  - slot_was_set:
+    - cust_name: tâm
+  - action: action_say_with_name  # predicted: action_unlikely_intent
+  - intent: thoi_gian_van_chuyen
+  - action: utter_thoi_gian_van_chuyen
+  - intent: thoi_gian_van_chuyen
+  - action: utter_thoi_gian_van_chuyen
+  - intent: dang_ky
+  - action: utter_dang_ky
+  - action: utter_start_dang_ky
+  - intent: cac_buoc_muon_sach
+  - action: action_start_muonsach
+  - intent: gioi_thieu
+  - action: utter_gioi_thieu
+  - intent: goodbye
+  - action: utter_goodbye

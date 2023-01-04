@@ -1,0 +1,87 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+  - story: kich ban demo
+    steps:
+      - user: |
+          xin chào
+        intent: greet
+      - action: utter_greet
+      - user: |
+          tôi là [huỳnh]{"entity": "cust_name"}
+        intent: give_name
+      - action: action_say_with_name
+      - user: |
+          giới thiệu sách cho tôi đi
+        intent: tu_van_sach
+      - action: action_categories
+      - user: |
+          tôi thích thể loại lịch sử
+        intent: sach_lich_su
+      - action: action_book_history
+      - user: |
+          giới thiệu sách tiểu sử cho tôi đi
+        intent: sach_tieusu_tutruyen
+      - action: action_book_BiographyAutobiography
+      - user: |
+          giá thuê chúng thế nào
+        intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - user: |
+          tôi muốn gia hạn sách thì làm sao
+        intent: gia_han
+      - action: utter_gia_han
+      - user: |
+          phí vận chuyển đến tỉnh [an giang]{"entity": "ten_tinh"} là bao nhiêu
+        intent: lay_ten_tinh
+      - action: action_cost_ship
+      - user: |
+          phí vận chuyển đến các tỉnh là bao nhiêu
+        intent: phi_van_chuyen
+      - action: utter_phi_van_chuyen
+      - user: |
+          giao pizza đến nhà cho tôi đi
+        intent: nlu_fallback
+      - action: utter_please_rephrase
+      - user: |
+          tôi muốn thuê sách thì làm thế nào
+        intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - user: |
+          làm thế nào để báo cáo phản hồi hệ thống
+        intent: gui_phan_hoi
+      - action: utter_gui_phan_hoi
+      - user: |
+          thư viện ở đâu vậy
+        intent: dia_chi
+      - action: utter_dia_chi
+      - user: |
+          xin chào, tôi là [tâm]{"entity": "cust_name"}
+        intent: give_name
+      - action: action_say_with_name
+      - user: |
+          ship hàng mất bao lâu vậy
+        intent: thoi_gian_van_chuyen
+      - action: utter_thoi_gian_van_chuyen
+      - user: |
+          bao lâu thì tôi mới nhận được sách
+        intent: thoi_gian_van_chuyen
+      - action: utter_thoi_gian_van_chuyen
+      - user: |
+          tôi muốn đăng ký tài khoản hệ thống
+        intent: dang_ky
+      - action: utter_dang_ky
+      - action: utter_start_dang_ky
+      - user: |
+          lập phiếu thuê có rắc rối lắm không
+        intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - user: |
+          ai đang nhắn tin với tôi vậy
+        intent: gioi_thieu
+      - action: utter_gioi_thieu
+      - user: |
+          tạm biệt, hẹn gặp lại
+        intent: goodbye
+      - action: utter_goodbye

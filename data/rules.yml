@@ -1,0 +1,115 @@
+version: "2.0"
+
+rules:
+  - rule: send mess fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_please_rephrase
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: gioi_thieu
+      - action: utter_gioi_thieu
+
+  - rule: hoi ve dia chi
+    steps:
+      - intent: dia_chi
+      - action: utter_dia_chi
+
+  - rule: hoi ve gia thue
+    steps:
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+
+  - rule: hoi ve cach thanh toan
+    steps:
+      - intent: thanh_toan
+      - action: utter_thanh_toan
+      - action: utter_them_thanh_toan
+
+  - rule: hoi ve the loai sach
+    steps:
+      - intent: the_loai_sach
+      - action: utter_the_loai_sach
+      - action: utter_the_loai_mot_sach
+      - action: utter_the_loai_hai_sach
+      - action: utter_the_loai_ba_sach
+      - action: utter_the_loai_bon_sach
+      - action: utter_the_loai_nam_sach
+
+  - rule: tu van sach
+    steps:
+      - intent: tu_van_sach
+      - action: action_categories
+      # - action: utter_tu_van_sach
+      # - action: utter_khac_tu_van_sach
+
+  - rule: cac buoc muon sach
+    steps:
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+
+  - rule: phi van chuyen
+    steps:
+      - intent: phi_van_chuyen
+      - action: utter_phi_van_chuyen
+
+  - rule: bu thoi gian muon
+    steps:
+      - intent: muon_xa
+      - action: utter_muon_xa
+
+  - rule: gia han
+    steps:
+      - intent: gia_han
+      - action: utter_gia_han
+
+  - rule: dang ky tai khoan
+    steps:
+      - intent: dang_ky
+      - action: utter_dang_ky
+      - action: utter_start_dang_ky
+
+  - rule: gui phan hoi
+    steps:
+      - intent: gui_phan_hoi
+      - action: utter_gui_phan_hoi
+
+  - rule: thoi gian van chuyen
+    steps:
+      - intent: thoi_gian_van_chuyen
+      - action: utter_thoi_gian_van_chuyen
+
+  - rule: xu ly sach loi
+    steps:
+      - intent: sach_loi
+      - action: utter_sach_loi
+
+  - rule: sach lich su
+    steps:
+      - intent: sach_lich_su
+      - action: action_book_history
+
+  - rule: sach vien tuong
+    steps:
+      - intent: sach_vien_tuong
+      - action: action_book_fiction
+
+  - rule: sach phe binh van hoc
+    steps:
+      - intent: sach_phe_binh_van_hoc
+      - action: action_book_LiteraryCriticsm
+
+  - rule: sach tieu su va tu truyen
+    steps:
+      - intent: sach_tieusu_tutruyen
+      - action: action_book_BiographyAutobiography
+
+  - rule: sach tieu thuyet vi thanh nien
+    steps:
+      - intent: sach_tieuthuyet_vithanhnien
+      - action: action_book_JuvenileFiction

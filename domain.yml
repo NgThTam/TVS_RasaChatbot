@@ -1,0 +1,116 @@
+version: "3.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - give_name
+  - goodbye
+  - greet
+  - gioi_thieu
+  - dia_chi
+  - gia_thue_sach
+  - thanh_toan
+  - the_loai_sach
+  - tu_van_sach
+  - cac_buoc_muon_sach
+  - phi_van_chuyen
+  - muon_xa
+  - gia_han
+  - dang_ky
+  - gui_phan_hoi
+  - thoi_gian_van_chuyen
+  - sach_loi
+  - sach_lich_su
+  - sach_vien_tuong
+  - sach_phe_binh_van_hoc
+  - sach_tieusu_tutruyen
+  - sach_tieuthuyet_vithanhnien
+  - lay_ten_tinh
+entities:
+  - cust_name
+  - ten_tinh
+slots:
+  cust_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: cust_name
+  ten_tinh:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: ten_tinh
+responses:
+  utter_greet:
+    - text: Xin Chào! Bạn có thể cho tôi biết tên không?
+  utter_goodbye:
+    - text: Tạm biệt
+  utter_gioi_thieu:
+    - text: Tôi là trợ lý ảo, nhiệm vụ của tôi là giải đáp giúp bạn có trải nghiệm tốt hơn ^.^
+  utter_dia_chi:
+    - text: Địa chỉ thư viện nằm ở số 123/NH/Nui-Sap/Thoai-Son/An-Giang
+    - text: Địa chỉ của chúng tôi là 123/NH/Nui-Sap/Thoai-Son/An-Giang
+  utter_gia_thue_sach:
+    - text: Chi phí mượn sách có giá là 0.5$/ngày cho 1 quyển sách và bạn sẽ phải thanh toán 0.6$/ngày/sách nếu quá hạn mượn
+  utter_thanh_toan:
+    - text: Sách bạn có thể gửi trực tiếp hoặc gửi về địa chỉ 123/NH/Nui-Sap/Thoai-Son/An-Giang
+  utter_them_thanh_toan:
+    - text: Hiện giờ chúng tôi chưa có thanh toán chi phí online nên bạn có thể thanh toán phí sau khi nhận sách.
+  utter_the_loai_sach:
+    - text: Hiện giờ chúng tôi có tổng cộng 5 loại sách khác nhau gồm
+  utter_the_loai_mot_sach:
+    - text: 1.Tiểu sử và tự truyện (Biography & Autobiography)
+  utter_the_loai_hai_sach:
+    - text: 2.Lịch sử (History)
+  utter_the_loai_ba_sach:
+    - text: 3.Viễn tưởng (Fiction)
+  utter_the_loai_bon_sach:
+    - text: 4.Hư cấu vị thành niên (Juvenile Fiction)
+  utter_the_loai_nam_sach:
+    - text: 5.Phê bình văn học (Literary Criticism)
+  utter_tu_van_sach:
+    - image: https://m.media-amazon.com/images/I/41Cb7nz5cnL._AC_SY780_.jpg
+      text: -Letters from the Earth- nội dung là câu chuyện đạo đức được kể như một cuộc thảo luận
+  utter_khac_tu_van_sach:
+    - image: https://salt.tikicdn.com/cache/w1200/ts/product/be/dc/1a/a7f09b719b6600766112f83d9748fbb3.jpg
+      text: hoặc -Taken at the Flood- là một tác phẩm trinh thám viễn tưởng rất thú vị mà bạn nên đọc
+  utter_cac_buoc_muon_sach:
+    - text: Đầu tiên bạn cần đăng ký tài khoản hệ thống và làm theo các bước
+  utter_buoc_mot_muon_sach:
+    - text: Bước 1. Tìm kiếm quyển sách mà bạn muốn thuê (mượn)
+  utter_buoc_hai_muon_sach:
+    - text: Bước 2. Xem thông tin sách -> Thêm vào giỏ
+  utter_buoc_ba_muon_sach:
+    - text: Bước 3. Chọn giỏ hàng và tiến hành lập phiếu thuê sách
+  utter_buoc_bon_muon_sach:
+    - text: Sau khi lập phiếu thuê bạn có thể xem lại ở trang cá nhân
+  utter_phi_van_chuyen:
+    - text: Bạn ở tỉnh nào?
+  utter_muon_xa:
+    - text: Nếu bạn lập phiếu thuê hình thức online thì thời gian mượn trả sẽ được tính khi bạn đã nhận được sách
+  utter_gia_han:
+    - text: Rất tiếc! hiện giờ chúng tôi chưa có chức năng gia hạn trực tuyến
+  utter_dang_ky:
+    - text: Dễ thôi! bạn chỉ cần chọn mục Register có trên đầu trang web
+  utter_start_dang_ky:
+    - text: Điền thông tin theo chỉ định và chọn Start thế là bạn đã đăng ký thành công rồi đó ^.^
+  utter_gui_phan_hoi:
+    - text: Để đóng góp ý kiến cho chúng tôi bạn vào mục About -> Contacts, tại cuối trang Contacts sẽ có thông tin và nơi gửi phản hồi cho chúng tôi!
+  utter_thoi_gian_van_chuyen:
+    - text: Bạn sẽ nhận được sách sau 1 đến 3 ngày kể từ khi lập phiếu thuê trực tuyến.
+  utter_sach_loi:
+    - text: Thật sự rất xin lỗi! đó là lỗi của chúng tôi. Bạn vui lòng gửi phản hồi cho chúng tôi để chúng tôi kịp thời xử lý
+  utter_please_rephrase:
+    - text: Tôi xin lỗi! tôi không hiểu điều đó, bạn có thể hỏi lại không?
+actions:
+  - action_say_with_name
+  - action_categories
+  - action_book_history
+  - action_book_fiction
+  - action_book_LiteraryCriticsm
+  - action_book_BiographyAutobiography
+  - action_book_JuvenileFiction
+  - action_cost_ship
+  - action_start_muonsach

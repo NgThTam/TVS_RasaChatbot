@@ -1,0 +1,459 @@
+version: "2.0"
+
+stories:
+  - story: greet name
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: gioi_thieu
+      - action: utter_gioi_thieu
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: dia_chi
+      - action: utter_dia_chi
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: greet name 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: dia_chi
+      - action: utter_dia_chi
+      - intent: gioi_thieu
+      - action: utter_gioi_thieu
+
+  - story: chao - dia chi
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: dia_chi
+      - action: utter_dia_chi
+
+  - story: chao - ten - hoi gia
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+
+  - story: chao - ten - hoi gia - thanh toan
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: thanh_toan
+      - action: utter_thanh_toan
+      - action: utter_them_thanh_toan
+
+  - story: chao - ten - hoi the loai
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: the_loai_sach
+      - action: utter_the_loai_sach
+      - action: utter_the_loai_mot_sach
+      - action: utter_the_loai_hai_sach
+      - action: utter_the_loai_ba_sach
+      - action: utter_the_loai_bon_sach
+      - action: utter_the_loai_nam_sach
+
+  - story: chao - ten - gia - the loai
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: the_loai_sach
+      - action: utter_the_loai_sach
+      - action: utter_the_loai_mot_sach
+      - action: utter_the_loai_hai_sach
+      - action: utter_the_loai_ba_sach
+      - action: utter_the_loai_bon_sach
+      - action: utter_the_loai_nam_sach
+
+  - story: chao - tu van
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: tu_van_sach
+      - action: action_categories
+      # - action: utter_tu_van_sach
+      # - action: utter_khac_tu_van_sach
+
+  - story: chao - cac buoc muon sach - tu van - bye
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - intent: tu_van_sach
+      - action: action_categories
+      # - action: utter_tu_van_sach
+      # - action: utter_khac_tu_van_sach
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: chao - cac buoc muon sach - tu van - chi phi - thanh toan - tam biet
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_lich_su
+      - action: action_book_history
+      # - action: utter_tu_van_sach
+      # - action: utter_khac_tu_van_sach
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: thanh_toan
+      - action: utter_thanh_toan
+      - action: utter_them_thanh_toan
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: chao - hoi phi - bu thoi gian
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: phi_van_chuyen
+      - action: utter_phi_van_chuyen
+      - intent: lay_ten_tinh
+        entities:
+          - ten_tinh:
+      - slot_was_set:
+          - ten_tinh:
+      - action: action_cost_ship
+      - intent: muon_xa
+      - action: utter_muon_xa
+
+  - story: chao - ten - gia - phi van chuyen - bu thoi gian
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: phi_van_chuyen
+      - action: utter_phi_van_chuyen
+      - intent: lay_ten_tinh
+        entities:
+          - ten_tinh:
+      - slot_was_set:
+          - ten_tinh:
+      - action: action_cost_ship
+      - intent: muon_xa
+      - action: utter_muon_xa
+
+  - story: chao - ten - gia han
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: gia_han
+      - action: utter_gia_han
+
+  - story: chao - ten - dang ky - cac buoc muon sach
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: dang_ky
+      - action: utter_dang_ky
+      - action: utter_start_dang_ky
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+
+  - story: chao - ten - gui phan hoi
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: gui_phan_hoi
+      - action: utter_gui_phan_hoi
+
+  - story: chao - ten - thoi gian van chuyen
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: thoi_gian_van_chuyen
+      - action: utter_thoi_gian_van_chuyen
+
+  - story: chao - ten - gia thue - phi van chuyen - thoi gian van chuyen - bu gio - gui phan hoi
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: phi_van_chuyen
+      - action: utter_phi_van_chuyen
+      - intent: lay_ten_tinh
+        entities:
+          - ten_tinh:
+      - slot_was_set:
+          - ten_tinh:
+      - action: action_cost_ship
+      - intent: thoi_gian_van_chuyen
+      - action: utter_thoi_gian_van_chuyen
+      - intent: muon_xa
+      - action: utter_muon_xa
+      - intent: gui_phan_hoi
+      - action: utter_gui_phan_hoi
+
+  - story: chao - ten - sach loi
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: sach_loi
+      - action: utter_sach_loi
+
+  - story: chao - ten - sach loi - phan hoi
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: sach_loi
+      - action: utter_sach_loi
+      - intent: gui_phan_hoi
+      - action: utter_gui_phan_hoi
+
+  - story: tu van sach the loai lich su
+    steps:
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_lich_su
+      - action: action_book_history
+
+  - story: tu van sach the loai vien tuong
+    steps:
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_vien_tuong
+      - action: action_book_fiction
+
+  - story: chao - cac buoc muon sach - tu van - chi phi - thanh toan - tam biet
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_vien_tuong
+      - action: action_book_fiction
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: thanh_toan
+      - action: utter_thanh_toan
+      - action: utter_them_thanh_toan
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: tu van sach the loai phe binh van hoc
+    steps:
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_phe_binh_van_hoc
+      - action: action_book_LiteraryCriticsm
+
+  - story: chao - cac buoc muon sach - tu van - chi phi - thanh toan - tam biet
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_phe_binh_van_hoc
+      - action: action_book_LiteraryCriticsm
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: thanh_toan
+      - action: utter_thanh_toan
+      - action: utter_them_thanh_toan
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: tu van sach the loai tieu su va tu truyen
+    steps:
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_tieusu_tutruyen
+      - action: action_book_BiographyAutobiography
+
+  - story: chao - cac buoc muon sach - tu van - chi phi - thanh toan - tam biet
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_tieusu_tutruyen
+      - action: action_book_BiographyAutobiography
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: thanh_toan
+      - action: utter_thanh_toan
+      - action: utter_them_thanh_toan
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: tu van sach the loai tieu su va tu truyen
+    steps:
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_tieuthuyet_vithanhnien
+      - action: action_book_JuvenileFiction
+
+  - story: chao - cac buoc muon sach - tu van - chi phi - thanh toan - tam biet
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_name
+        entities:
+          - cust_name:
+      - slot_was_set:
+          - cust_name:
+      - action: action_say_with_name
+      - intent: cac_buoc_muon_sach
+      - action: action_start_muonsach
+      - intent: tu_van_sach
+      - action: action_categories
+      - intent: sach_tieuthuyet_vithanhnien
+      - action: action_book_JuvenileFiction
+      - intent: gia_thue_sach
+      - action: utter_gia_thue_sach
+      - intent: thanh_toan
+      - action: utter_thanh_toan
+      - action: utter_them_thanh_toan
+      - intent: goodbye
+      - action: utter_goodbye

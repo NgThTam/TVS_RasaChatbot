@@ -1,0 +1,345 @@
+version: "3.0"
+nlu:
+  - intent: greet
+    examples: |
+      - xin chào
+      - alo
+      - chào bạn
+      - chào
+      - bạn ơi
+      - có ai đây không
+      - tôi có một vài vấn đề muốn hỏi
+      - cho tôi hỏi
+      - giải đáp giúp tôi với
+      - hỗ trợ tôi với
+  - intent: goodbye
+    examples: |
+      - cảm ơn, tạm biệt
+      - cảm ơn
+      - tạm biệt nhé
+      - tạm biệt
+      - hẹn gặp lại
+      - đa tạ
+      - lần sau gặp lại
+      - gặp lại sau nhé
+      - xin cảm ơn
+  - intent: give_name
+    examples: |
+      - tôi tên [Tâm](cust_name)
+      - [Tâm](cust_name) là tên của tôi
+      - [hải](cust_name)
+      - [an](cust_name)
+      - [bình](cust_name)
+      - tôi tên [Thang](cust_name)
+      - tôi tên [An](cust_name)
+      - tôi là [nha](cust_name)
+      - tôi tên [Trường](cust_name)
+      - tôi tên [bình](cust_name)
+      - tôi tên [viễn](cust_name)
+      - [Nguyen Thanh Tam](cust_name)
+      - [Nguyen van nha](cust_name)
+      - [duy truong](cust_name)
+      - tên tôi là [duy truong](cust_name)
+      - tôi tên [thanh tam](cust_name)
+      - tên đầy đủ của tôi là [Nguyen Thanh Tam](cust_name)
+      - tên đầy đủ của tôi là [Nguyen Van nha](cust_name)
+      - tên [tam](cust_name)
+      - tên là [hung](cust_name)
+      - tên là [Cuong](cust_name)
+  - intent: lay_ten_tinh
+    examples: |
+      - tôi ở [An Giang](ten_tinh)
+      - tôi ở [đồng tháp](ten_tinh)
+      - tôi ở [sóc trăng](ten_tinh)
+      - tôi ở [Bình Dương](ten_tinh)
+      - tôi đến từ [An giang](ten_tinh)
+      - tôi đến từ [đồng tháp](ten_tinh)
+      - [an giang](ten_tinh)
+      - [An giang](ten_tinh)
+      - [đồng tháp](ten_tinh)
+      - [lâm đồng](ten_tinh)
+      - tôi ở tỉnh [an giang](ten_tinh)
+      - tôi ở tỉnh [đồng tháp](ten_tinh)
+      - tôi ở tỉnh [Gia lai](ten_tinh)
+      - vậy còn ở [Con tum](ten_tinh) thì sao
+      - vậy còn ở [gia lai](ten_tinh) thì sao
+      - ở [gia lai](ten_tinh) thì sao
+      - ở [Vũng tàu](ten_tinh) thì sao
+      - vậy còn tỉnh [khác](ten_tinh) thì sao
+      - phí vận chuyển đến tỉnh [an giang](ten_tinh) bao nhiêu
+      - phí vận chuyển đến tỉnh [đồng tháp](ten_tinh) bao nhiêu
+      - phí vận chuyển đến tỉnh [kiên giang](ten_tinh) bao nhiêu
+  - intent: gioi_thieu
+    examples: |
+      - bạn là ai?
+      - bạn là gì?
+      - cho tôi biết bạn là ai
+      - ai vậy
+      - tên bạn là gì
+      - còn bạn tên gì
+      - bạn giới thiệu đi
+      - ai đang nói chuyện với tôi vậy
+      - ai đang chat thế?
+      - ai đang nhắn tin với tôi vậy
+  - intent: dia_chi
+    examples: |
+      - thư viện này ở đâu vậy?
+      - tôi muốn biết thư viện này ở đâu
+      - địa chỉ thư viện
+      - bạn có biết địa chỉ thư viện không
+      - thư viện này thuộc tỉnh nào vậy
+      - tôi muốn hỏi về địa chỉ
+      - cho tôi biết địa chỉ ở đâu
+      - tôi tìm mãi mà không thấy địa chỉ chỗ nào
+  - intent: gia_thue_sach
+    examples: |
+      - giá thuê sách như thế nào
+      - mất bao nhiêu để thuê sách
+      - tôi muốn biết giá thuê sách
+      - chi phí thuê như thế nào
+      - phí thuê
+      - phí thuê sách
+      - thuê sách phải trả bao nhiêu
+      - trễ hạn thì phí thuê như thế nào
+      - tôi muốn biết phí thuê
+      - giá thuê sách thế nào?
+      - phí mượn sách
+      - mượn sách thì tốn bao nhiêu?
+  - intent: thanh_toan
+    examples: |
+      - thanh toán thế nào?
+      - làm sao để trả sách
+      - làm sao để thanh toán chi phí
+      - tôi muốn trả sách thì làm sao
+      - trả sách ở đâu
+      - thanh toán chi phí thế nào?
+      - trả phí và trả sách thế nào
+      - làm sao để thanh toán phiếu thuê
+      - tôi muốn thanh toán phiếu thuê
+      - tôi muốn trả sách thì làm sao
+      - tôi muốn thanh toán phiếu thuê thì làm thế nào
+  - intent: the_loai_sach
+    examples: |
+      - thư viện mình có bao nhiêu loại sách vậy
+      - danh mục sách thế nào
+      - sách được phân loại như thế nào
+      - cho tôi biết có bao nhiêu loại sách được không
+      - tôi muốn biết danh mục sách
+      - có bao nhiêu loại sách
+      - sách được phân loại thế nào
+      - cho tôi biết có bao nhiêu loại sách ở đây không
+      - website có bao nhiêu loại sách vậy
+      - trang web có bao nhiêu loại sách
+      - tôi muốn hỏi về thể loại sách
+  - intent: tu_van_sach
+    examples: |
+      - tôi muốn tìm một số quyển sách tốt
+      - bạn giúp tôi tìm sách tốt đi
+      - giới thiệu cho tôi một vài quyển sách đi
+      - giới thiệu cho tôi một vài quyển sách được không?
+      - những quyển sách nào mà bạn cảm thấy hay vậy
+      - bạn gợi ý cho tôi một vài quyển sách hay đi
+      - tôi muốn tìm những quyển sách tốt
+      - những quyển sách có nội dung hay
+      - theo bạn những quyển sách nào có nội dung hay
+      - hãy giới thiệu cho tôi một vài quyển sách
+      - tôi muốn tư vấn sách
+      - bạn giới thiệu sách cho tôi đi
+      - tư vấn sách
+      - giới thiệu sách
+  - intent: sach_lich_su
+    examples: |
+      - tôi thích sách viết về lịch sử
+      - lịch sử
+      - giới thiệu cho tôi sách lịch sử đi
+      - tư vấn cho tôi sách lịch sử đi
+      - vậy lịch sử thì sao?
+      - sách nói về lịch sử
+      - tôi thích đọc sách nói về lịch sử
+      - thể loại lịch sử
+      - sách thuộc thể loại lịch sử
+      - sách lịch sử
+      - tôi thích thể loại lịch sử
+  - intent: cac_buoc_muon_sach
+    examples: |
+      - cách thức thuê sách thế nào
+      - cách thức mượn sách thế nào
+      - làm sao để lập phiếu thuê sách
+      - làm sao để mượn sách
+      - muốn thuê sách phải làm thế nào
+      - muốn mượn sách phải làm thế nào
+      - tôi muốn thuê sách nhưng không biết phải làm gì
+      - chỉ tôi cách thuê sách đi
+      - hướng dẫn tôi cách thuê sách đi
+      - hướng dẫn tôi cách mượn sách được không
+      - tôi không biết làm sao để thuê sách
+      - giúp tôi thuê sách với
+      - hướng dẫn tôi lập phiếu thuê được không
+      - tôi muốn mượn sách
+  - intent: phi_van_chuyen
+    examples: |
+      - phí vận chuyển thế nào
+      - phí vận chuyển
+      - phí vận chuyển thế nào?
+      - phí vận chuyển là bao nhiêu
+      - phí vận chuyển bao nhiêu
+      - mất bao nhiêu cho phí vận chuyển
+      - vận chuyển cần trả bao nhiêu
+      - trả bao nhiêu cho phí vận chuyển
+      - thanh toán bao nhiêu cho việc vận chuyển
+      - cần trả bao nhiêu tiền cho việc vận chuyển
+      - vậy phí vận chuyển thế nào
+      - vậy còn phí vận chuyển thì sao
+      - tôi ở xa thì phí như thế nào
+  - intent: muon_xa
+    examples: |
+      - tôi ở xa vận chuyển lâu vậy có bù thời hạn trả sách không
+      - nếu tôi ở xa thì thời gian trả sách thế nào
+      - có bù thời gian mượn trả nếu tôi ở xa không?
+      - có bù thời gian vận chuyển nếu tôi không cùng tỉnh không
+      - có bù thời gian vận chuyển nếu tôi ở xa không
+      - vậy có bù thời hạn trả sách không
+      - thời hạn được tính như thế nào
+      - nếu tôi nhận được sách không đúng ngày nhận khi lập phiếu thuê thì sao
+      - nếu tôi nhận được sách không đúng ngày trên phiếu thuê thì sao
+      - thời hạn mượn trả trực tuyến tính như nào
+      - thời hạn mượn trả online tính như nào
+      - có bù thời gian mượn trả nếu nhận sách trễ không
+      - có bù thời gian mượn trả nếu tôi nhận sách không đúng ngày thuê không
+      - vậy có bù thời gian cho việc vận chuyển đó không
+  - intent: gia_han
+    examples: |
+      - tôi muốn gia hạn cho phiếu thuê thì làm thế nào?
+      - làm thế nào để gia hạn phiếu thuê
+      - thêm thời gian mượn sách thì phải làm sao
+      - tôi cần gia hạn phiếu thuê
+      - muốn gia hạn phiếu thuê thì làm như nào
+      - làm sao để được gia hạn phiếu thuê
+      - tôi đã đến thời gian trả sách và muốn gia hạn thêm thời gian thì phải làm sao
+      - tăng thời gian trả sách như nào
+      - phiếu thuê đã hết hạn cần gia hạn thì phải làm sao
+      - làm sao để được gia hạn thời gian mượn trả
+      - thêm thời gian mượn sách phải làm thế nào
+      - nếu muốn gia hạn thêm thời gian phải làm sao
+  - intent: dang_ky
+    examples: |
+      - hướng dẫn tôi cách đăng ký tài khoản hệ thống được không?
+      - tôi muốn đăng ký tài khoản nhưng không biết làm thế nào
+      - tôi muốn đăng ký tài khoản nhưng không biết làm sao
+      - tôi muốn đăng ký tài khoản bạn hướng dẫn tôi được chứ?
+      - tôi muốn đăng ký tài khoản bạn hướng dẫn tôi được không?
+      - đăng ký tài khoản phải làm thế nào?
+      - đăng ký tài khoản bằng cách nào
+      - chỉ tôi đăng ký tài khoản với
+      - hướng dẫn tôi đăng ký tài khoản đi
+      - làm sao để có tài khoản đăng nhập hệ thống
+      - làm sao để có tài khoản hệ thống
+      - tôi không biết đăng ký tài khoản
+      - hướng dẫn tôi đăng ký tài khoản đi
+      - đăng ký tài khoản thế nào
+  - intent: gui_phan_hoi
+    examples: |
+      - tôi muốn phản hồi ý kiến thì làm thế nào
+      - để phản hồi ý kiến cá nhân phải làm thế nào
+      - tôi muốn gửi tin nhắn đến người quản lý thì phải làm sao
+      - làm sao để gửi tin nhắn cho nhà quản lý
+      - phản hồi người dùng trải nghiệm ở đâu vậy
+      - phản hồi trải nghiệm sử dụng dịch vụ tại đâu
+      - tôi muốn phản hồi trải nghiệm dịch vụ thì làm sao
+      - tôi muốn góp ý cho thư viện thì phải làm thế nào
+      - góp ý cho thư viện ở đâu
+      - tôi tìm không thấy chỗ góp ý
+      - tối muốn đóng góp ý kiến phải làm sao
+      - hướng dẫn tôi gửi tin nhắn cho nhà quản lý được không
+      - tôi muốn gửi phản hồi
+  - intent: thoi_gian_van_chuyen
+    examples: |
+      - thời gian vận chuyển là bao nhiêu
+      - bao lâu thì tôi mới nhận được sách
+      - mất bao nhiêu thời gian thì tôi mới nhận được sách
+      - khi tôi lập phiếu hoàn tất thì bao lâu tôi mới nhận được sách
+      - tôi muốn biết thời gian mà tôi nhận được sách sau khi lập phiếu thuê
+      - tôi muốn biết thời gian sẽ nhận được sách
+      - mất bao lâu để nhận được sách
+      - lập phiếu thuê xong thì bao lâu mới nhận được sách
+      - tôi cần biết thời gian để nhận sách
+      - khi nào sách mới tới tay tôi
+      - thời gian vận chuyển bao lâu
+  - intent: sach_loi
+    examples: |
+      - tôi nhận không đúng sách thì sao
+      - sao tôi nhận được sách khác
+      - sách tôi nhận được không đúng với tôi yêu cầu
+      - tôi nhận được sách không giống với phiếu thuê
+      - tại sao tôi thuê sách này mà gửi sách kia
+      - sách tôi nhận được không đúng với sách tôi mong muốn
+      - sách không đúng với yêu cầu
+      - tôi nhận được sách sai so với phiếu thuê sách của tôi
+      - tôi nhận được sách sai so với phiếu thuê sách của tôi thì làm sao
+      - tôi nhận sách không đúng với yêu cầu của tôi thì làm sao
+      - sao tôi nhận được sách không đúng với đơn của tôi
+      - sao tôi nhận được sách sai yêu cầu
+  - intent: sach_vien_tuong
+    examples: |
+      - viễn tưởng
+      - tôi thích sách viết về viễn tưởng
+      - giới thiệu cho tôi sách viễn tưởng đi
+      - tư vấn cho tôi sách viễn tưởng đi
+      - vậy viễn tưởng thì sao?
+      - sách nói về viễn tưởng
+      - tôi thích đọc sách nói về viễn tưởng
+      - thể loại viễn tưởng
+      - sách thuộc thể loại viễn tưởng
+      - sách viễn tưởng
+      - tôi thích thể loại viễn tưởng
+      - viễn tưởng đi
+      - tôi thích thể loại viễn tưởng
+  - intent: sach_phe_binh_van_hoc
+    examples: |
+      - phê bình văn học
+      - tôi thích sách viết về phê bình văn học
+      - giới thiệu cho tôi sách phê bình văn học đi
+      - tư vấn cho tôi sách phê bình văn học đi
+      - vậy phê bình văn học thì sao?
+      - sách nói về phê bình văn học
+      - tôi thích đọc sách nói về phê bình văn học
+      - thể loại phê bình văn học
+      - sách thuộc thể loại phê bình văn học
+      - sách phê bình văn học
+      - tôi thích thể loại phê bình văn học
+      - phê bình văn học đi
+      - tôi thích thể loại phê bình văn học
+  - intent: sach_tieusu_tutruyen
+    examples: |
+      - tiểu sử và tự truyện
+      - tiểu sử tự truyện
+      - tiểu sử
+      - tự truyện
+      - tôi thích sách viết về tiểu sử và tự truyện
+      - giới thiệu cho tôi sách tiểu sử và tự truyện đi
+      - tư vấn cho tôi sách tiểu sử và tự truyện đi
+      - vậy tiểu sử và tự truyện thì sao?
+      - sách nói về tiểu sử và tự truyện
+      - tôi thích đọc sách nói về tiểu sử và tự truyện
+      - thể loại tiểu sử và tự truyện
+      - sách thuộc thể loại tiểu sử và tự truyện
+      - sách tiểu sử và tự truyện
+      - tôi thích thể loại tiểu sử và tự truyện
+      - tiểu sử và tự truyện đi
+      - tôi thích thể loại tiểu sử và tự truyện
+  - intent: sach_tieuthuyet_vithanhnien
+    examples: |
+      - tiểu thuyết
+      - tiểu thuyết vị thành niên
+      - tôi thích sách viết về tiểu thuyết vị thành niên
+      - giới thiệu cho tôi sách tiểu thuyết vị thành niên đi
+      - tư vấn cho tôi sách tiểu thuyết vị thành niên đi
+      - vậy tiểu thuyết vị thành niên thì sao?
+      - sách nói về tiểu thuyết vị thành niên
+      - tôi thích đọc sách nói về tiểu thuyết vị thành niên
+      - thể loại tiểu thuyết vị thành niên
+      - sách thuộc thể loại tiểu thuyết vị thành niên
+      - sách tiểu thuyết vị thành niên
+      - tôi thích thể loại tiểu thuyết vị thành niên
+      - tiểu thuyết vị thành niên đi
+      - tôi thích thể loại tiểu thuyết vị thành niên

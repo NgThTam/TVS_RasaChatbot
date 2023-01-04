@@ -1,0 +1,14 @@
+[
+  {
+    "text": "tôi là huỳnh",
+    "entities": [
+      {
+        "start": 7,
+        "end": 12,
+        "value": "huỳnh",
+        "entity": "cust_name"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
